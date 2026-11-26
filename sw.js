@@ -1,5 +1,5 @@
 /* Service worker: deja la aplicación disponible sin conexión después de la primera apertura. */
-const V='rudex-v2.0-2026-11-26';
+const V='rudex-v2.1-2026-11-26';
 const CORE=['./favicon-48.png','./','./index.html','./manifest.webmanifest','./xlsx.full.min.js','./icon-192.png','./icon-512.png','./maskable-512.png','./apple-touch-icon.png'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(V).then(c=>c.addAll(CORE)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==V).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
