@@ -982,7 +982,7 @@ function renderNorm(){
   h+='<div class="card"><h3>Categorías RCE</h3><p class="ver">Nómina de especies según estado de conservación del MMA, actualizada hasta el 20° proceso RCE.</p><div class="legal">'+['CR','EN','VU','NT','LC','DD','R'].map(k=>'<div class="lrow"><span class="tag cat '+k+'" style="font-size:12px;padding:4px 8px">'+k+'</span><div>'+esc(CATN[k])+'</div></div>').join('')+'</div><p class="note" style="margin-top:10px">Un asterisco junto a la categoría indica que la especie tiene categorías distintas según la zona del país; el detalle está en la ficha de la especie.</p></div>';
   h+='<div class="card"><h3>Universo de especies</h3><p class="p" style="font-size:13px">La lista reúne aves con presencia documentada en la Región de O\'Higgins, en todos los ambientes: registros regionales (monitoreos GEF de Cáhuil 2022-2024, Mella-Romero 2021, humedal El Petrel 2023 y distribución regional de la nómina RCE) y especies cuyo rango, según las guías y fuentes citadas, comprende la región. Cada ficha indica el estado y su fuente.</p><div class="legal">'+['R','D','O','Z','G','F'].map(k=>'<div class="lrow"><span class="lcode">'+k+'</span><div>'+esc(PRN[k])+'</div></div>').join('')+'</div><p class="note" style="margin-top:10px">Las especies con estado F quedan fuera de la lista y se agregan desde «Agregar especie no listada».</p></div>';
   h+='<div class="card"><h3>Fuentes de las fichas de especies</h3><div class="legal">'+Object.values(SRC).map(v=>'<p class="p" style="font-size:13px">'+esc(v)+'</p>').join('')+'</div></div>';
-  h+='<div class="card"><h3>Acerca de RÜdex</h3><p class="p" style="font-size:13px"><b>RÜdex</b>, versión '+APPV+', noviembre de 2026. Registro y catálogo de aves en terreno para la Región de O\'Higgins. Incluye el formato de la Ficha de Caracterización de Avifauna utilizada por el SAG y exporta en esa estructura.</p><p class="p" style="font-size:13px"><b>'+esc(AUTH)+'</b></p><p class="note">'+esc(THIRD)+' Exportación a Excel con SheetJS Community Edition (licencia Apache 2.0).</p></div>';
+  h+='<div class="card"><h3>Acerca de RÜdex</h3><p class="p" style="font-size:13px"><b>RÜdex</b>, versión '+APPV+', noviembre de 2026. Registro y catálogo de aves en terreno para la Región de O\'Higgins. Incluye el formato de la Ficha de Caracterización de Avifauna utilizada por el SAG y exporta en esa estructura.</p><p class="p" style="font-size:13px"><b>'+esc(AUTH)+'</b></p><p class="note">'+esc(THIRD)+' Exportación a Excel con SheetJS Community Edition (licencia Apache 2.0). Esta aplicación cuenta sus aperturas en forma anónima con GoatCounter, sin cookies y sin registrar nombres, fichas ni conteos.</p></div>';
   $('#normBody').innerHTML=h;
 }
 
@@ -1046,5 +1046,6 @@ start();
 })();
 </script>
 <script src="xlsx.full.min.js" async></script>
+<script data-goatcounter="https://rudex.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <script>if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{})})}</script>
 </body></html>
